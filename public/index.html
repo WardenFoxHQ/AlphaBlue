@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Static Server - Alpha Blue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: black;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .version {
+            font-size: 14px;
+            color: gray;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .stats-section {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            display: inline-block;
+            margin: 10px 20px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: gray;
+        }
+
+        .feature-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .feature-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .cta-button {
+            background: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Alpha Blue</h1>
+            <div class="version">v0.0.1 Alpha Blue</div>
+            <p class="subtitle">Development server for HTML pages and custom APIs</p>
+        </div>
+
+
+        <div class="cta-section">
+            <a href="/health?key=secure-health-api-key-2024" class="cta-button">Check Server Health</a>
+            <p style="color: red; font-size: 12px; margin-top: 10px;">
+                <strong>CHANGE API KEY:</strong> Update the API key in .env file for security
+            </p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Performance Disclaimer:</strong> Results tested before releasing with default configuration. Performance varies significantly based on your hardware, network conditions, system load, and application modifications. Adding more features, middleware, database connections, or custom logic will reduce performance. No guarantee of specific performance results.</p>
+        </div>
+    </div>
+</body>
+</html>
