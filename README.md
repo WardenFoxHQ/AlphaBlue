@@ -1,4 +1,4 @@
-# ⚡ Fast Static Server
+# Fast Static Server
 
 **A lightweight development server for HTML pages and custom APIs**
 
@@ -6,14 +6,14 @@ Fast, secure, and easy to extend - perfect for rapid prototyping and development
 
 *Tested: Hello World API (57,893 req/sec) + index.html (54,087 req/sec) on Intel Ultra 9 275HX (single core)*
 
-## 🎯 What This Is
+##  What This Is
 
 A simple Node.js server that:
 - **Serves HTML pages** from a `public/` folder (loaded into memory for speed)
 - **Builds custom APIs** quickly with Fastify
 - **Fast development** with configuration via `.env`
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 AlphaBlue/
@@ -60,7 +60,7 @@ fastify.post('/api/data', (request, reply) => {
 });
 ```
 
-## ⚙️ Configuration (.env)
+## Configuration (.env)
 
 ```env
 # Server settings
@@ -78,7 +78,7 @@ TRUST_PROXY=false
 ENABLE_LOGGING=false
 ```
 
-## 🔧 Features
+##  Features
 
 - **HTML serving**: Files auto-loaded into memory for speed
 - **API framework**: Fastify for building REST APIs
@@ -86,7 +86,7 @@ ENABLE_LOGGING=false
 - **Error handling**: Clean text responses (not JSON dumps)
 - **Environment config**: Easy setup via `.env`
 
-## 🚀 Performance
+## Performance
 
 **Performance Results (Windows localhost):**
 - **Hello World API (/helloworld)**: 57,893 req/sec
@@ -160,7 +160,7 @@ npx autocannon -c 100 -d 15 http://localhost:3000/helloworld
 
 **Note**: CPU core selection works on Windows (tested) and Linux (taskset support added, untested). On macOS, the server runs without CPU affinity controls.
 
-## 💡 Use Cases
+## Use Cases
 
 **Perfect for:**
 - Rapid prototyping
