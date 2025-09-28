@@ -1,4 +1,4 @@
-# Fast Static Server
+# AlphaBlue
 
 **A lightweight development server for HTML pages and custom APIs**
 
@@ -28,7 +28,7 @@ AlphaBlue/
 └── package.json
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 # Install dependencies
