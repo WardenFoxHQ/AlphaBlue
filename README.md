@@ -4,7 +4,7 @@
 
 Fast, secure, and easy to extend - perfect for rapid prototyping and development.
 
-*Tested: Hello World API (57,893 req/sec) + index.html (54,087 req/sec) on Intel Ultra 9 275HX (single core)*
+*Tested: Hello World API (57,893 req/sec) + index.html (54,087 req/sec) on an Intel Ultra 9 275HX (single core). Performance on standard hardware may vary.*
 
 ##  What This Is
 
@@ -88,50 +88,18 @@ ENABLE_LOGGING=false
 
 ## Performance
 
-**Performance Results (Windows localhost):**
-- **Hello World API (/helloworld)**: 57,893 req/sec
-- **index.html serving**: 54,087 req/sec from memory
-- **Ran om**: Dedicated 1 core
+Performance benchmarks vary based on hardware. The following table shows results from both a high-performance machine and a standard development server.
 
-### Test Environment
+| CPU                                     | Core Type     | Endpoint      | Requests/sec |
+|-----------------------------------------|---------------|---------------|--------------|
+| **Intel(R) Core(TM) Ultra 9 275HX**     | P-core        | `/helloworld` | 57,893       |
+| **Intel(R) Core(TM) Ultra 9 275HX**     | P-core        | `/index`      | 54,087       |
+| **Intel(R) Core(TM) Ultra 9 275HX**     | E-core        | `/helloworld` | 39,000       |
+| **Intel(R) Core(TM) Ultra 9 275HX**     | E-core        | `/index`      | 38,700       |
+| **Intel(R) Xeon(R) Processor @ 2.30GHz**| Standard      | `/helloworld` | ~23,000      |
+| **Intel(R) Xeon(R) Processor @ 2.30GHz**| Standard      | `/index`      | ~21,000      |
 
-**CPU:** Intel(R) Core(TM) Ultra 9 275HX
-- **Base speed**: 2.70 GHz (boosted to 4.59 GHz during test)
-- **Cores**: 24 cores, 24 logical processors
-- **Cache**: L1: 2.4 MB, L2: 40.0 MB, L3: 36.0 MB
-- **Test method**: Single CPU core
-- **OS**: Windows 10 
-
-**Results Summary**: Hello World API: 57,893 req/sec, index.html: 54,087 req/sec. Only 7% performance difference between API and HTML serving.
-
-### CPU Core Performance Analysis
-
-**Intel Ultra 9 275HX Core Types:**
-
-**Performance Cores (P-cores):**
-  - **CPU Core 0**: 57,893 req/sec (1.17ms latency) - `/helloworld` (latest test)
-  - **CPU Core 0**: 54,087 req/sec (1.25ms latency) - `/index` (latest test)
-  - **CPU Core 23**: 60,000 req/sec (1.09ms latency) - `/helloworld` (previous test)
-  - **Optimized for**: Maximum single-thread performance
-
-  **Efficiency Cores (E-cores):**
-  - **CPU Core 18**: 39,000 req/sec (2.07ms latency) - `/helloworld`
-  - **CPU Core 18**: 38,700 req/sec (2.10ms latency) - `/index` (7KB HTML)
-  - **Optimized for**: Power efficiency, lower performance
-
-  **Key Findings**:
-  - Performance cores deliver ~55% higher throughput than efficiency cores
-  - HTML files (7KB) perform nearly identical to text responses (12-byte) on same core type
-  - P-cores: ~2% performance difference between `/helloworld` and `/index`
-  - E-cores: ~1% performance difference between `/helloworld` and `/index`
-  - Server automatically adapts to any core type via .env configuration
-
-### Performance Comparison
-
-- **AlphaBlue**: **57,893 req/sec** (Performance Core 0)
-- **AlphaBlue**: **39,000 req/sec** (Efficiency Core 18)
-
-**Note**: Results tested on Windows localhost using 1 CPU core per instance. CPU affinity works on Windows (PowerShell) and Linux (taskset - untested). Production performance may differ.
+**Note**: CPU affinity to select specific core types works on Windows (PowerShell) and Linux (taskset - tested). Production performance will differ based on hardware and workload.
 
 ### Core Selection via .env
 

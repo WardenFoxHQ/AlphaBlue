@@ -1,5 +1,5 @@
 {
-  "name": "fast-static-server",
+  "name": "AlphaBlue",
   "version": "0.0.1",
   "description": "Fast development server for HTML pages and custom APIs - Simple, secure, and optimized for speed",
   "main": "index.js",
