@@ -1,4 +1,4 @@
-# AlphaBlue
+# AlphaBlue 0.0.0.2
 
 **A lightweight development server for HTML pages and custom APIs**
 
